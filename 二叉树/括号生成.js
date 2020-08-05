@@ -1,7 +1,3 @@
-/**
- * @param {number} n
- * @return {string[]}
- */
-var generateParenthesis = function(n) {
 
-};
+//let map=new Map()
+console.log(JSON.stringify([]))
