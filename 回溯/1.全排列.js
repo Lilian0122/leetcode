@@ -4,10 +4,21 @@
  */
 var permute = function(nums) {
   let result=[]
-  result[0]=[nums[0],nums[1]]
-  result[1]=[nums[1],nums[0]
-  for(let i=2;i<nums.length;i++){
-    let length=result[0].length
-    
+  subPermute(nums,[])
+  return result
+
+  function subPermute(nums,path){
+    if(path.length===nums.length){
+      result.push([...path])
+      return
+    }
+    for(let i of nums){
+      if(path.includes(i)){
+        continue
+      }
+      path.push(i)
+      subPermute(nums,path)
+      path.pop()
+    }
   }
 };
